@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     if params[:date] == "Today"
       @posts = Post.from_today
     else
-      @posts = Post.where("created_at <?", Time.zone.today.beginning_of_day)
+      @posts = Post.old_news
     end
     
     else
